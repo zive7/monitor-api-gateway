@@ -1,0 +1,45 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/admins",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50124
+        }
+      ],
+      "UpstreamPathTemplate": "/api/admins",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/api/employees",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50253
+        }
+      ],
+      "UpstreamPathTemplate": "/api/employees",
+      "UpstreamHttpMethod": []
+    },
+    {
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 50491
+        }
+      ],
+      "UpstreamPathTemplate": "/api/error",
+      "UpstreamHttpMethod": [],
+      "Priority": 0
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration"
+  }
+}
